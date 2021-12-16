@@ -46,3 +46,14 @@ it("decrease the fitness by 3", () => {
 
   expect(pet.fitness).toEqual(7);
 });
+
+describe("Walk", () => {
+  it("increases fitness by by a maximum of 10 ", () => {
+    const pet = new Pet("Fido");
+
+    pet.fitness = 8;
+    pet.walk();
+
+    expect(pet.fitness).toEqual(10);
+  });
+});
