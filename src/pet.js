@@ -17,5 +17,13 @@ Pet.prototype.walk = function () {
     this.fitness = MAXIMUM_FITNESS;
   }
 };
+const MINIMUM_HUNGER = 0;
+Pet.prototype.feed = function () {
+  if (this.hunger - 3 > 0) {
+    this.hunger -= 3;
+  } else {
+    this.hunger = MINIMUM_HUNGER;
+  }
+};
 
 module.exports = Pet;
