@@ -72,6 +72,11 @@ describe("Feed", () => {
     pet.feed();
     expect(pet.hunger).toEqual(0);
   });
+  it("Throws an error if the pet is not alive", () => {
+    const pet = new Pet("Fido");
+    pet.age = 30;
+    expect(() => pet.feed()).toThrow("Your pet is no longer alive :(");
+  });
 });
 
 describe("checkUp)", () => {
@@ -118,7 +123,7 @@ describe("isAlive", () => {
   });
   it("Returns false if fitness is 0 or less", () => {
     const pet = new Pet("Fido");
-    pet.age = 0;
+    pet.fitness = 0;
     expect(pet.isAlive).toEqual(false);
   });
 });
